@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browserify Modules Sample Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Browserify Modules example</h1>
+    <p>Nothing much to see on the page, but try opening your console to see the JavaScript logs.</p>
+
+    <ul class="sample-module-1__list" data-behavior="js-module-hook">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+
+    <ul class="sample-module-1__list" data-behavior="js-module-hook">
+        <li>List item 1</li>
+        <li>List item 2</li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/lib/jquery.min.js"><\/script>')</script>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>
