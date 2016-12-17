@@ -4,9 +4,12 @@ import { extend } from 'lodash';
 
 // Private variables
 const moduleDefaults = {
-    selector: '[data-behavior="js-module-hook"]',
+    selectors: {
+        button: '[data-behavior="js-animation-trigger"]',
+        wrappers: '[data-behavior="js-animate"]'
+    },
     states: {
-        active: 'active'
+        active: 'modified'
     }
 };
 
@@ -20,7 +23,7 @@ export const init = function ( options ) {
     
     // example of using the extend method from lodash
     moduleSettings = extend( {}, moduleDefaults, options );
-    $el = $( moduleSettings.selector );
+    $el = $( moduleSettings.selectors.wrappers );
 
     bindEvents();
 };
@@ -35,8 +38,8 @@ export const minus = ( a, b ) => a - b;
 
 // internal only methods
 const bindEvents = function () {
-    $el.on( 'click', function () {
-        $( this ).toggleClass( moduleDefaults.states.active );
+    $( moduleSettings.selectors.button ).on( 'click', () => {
+        $el.toggleClass( moduleDefaults.states.active );
     } );
 };
 
